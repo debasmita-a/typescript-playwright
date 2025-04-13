@@ -1,0 +1,22 @@
+{
+  "name": "playwright-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "description": "",
+  "devDependencies": {
+    "@playwright/test": "^1.51.1",
+    "@types/node": "^22.14.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "playwright": "^1.51.1",
+    "typescript": "^5.8.3"
+  }
+}

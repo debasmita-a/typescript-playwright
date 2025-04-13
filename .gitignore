@@ -1,0 +1,12 @@
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright-ts-orangehrm-website.iml
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
