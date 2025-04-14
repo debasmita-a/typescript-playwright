@@ -22,7 +22,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    headless: false,
+    headless: true,
     trace: 'on-first-retry',
   },
   projects: [
