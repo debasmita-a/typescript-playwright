@@ -22,7 +22,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : 4,
   reporter: [['html'], ['list'], ['json', {outputFile:'.rcvreport.json'}]],
   use: {
-    headless: false,
+    headless: true,
     trace: 'on-first-retry',
   },
   projects: [
