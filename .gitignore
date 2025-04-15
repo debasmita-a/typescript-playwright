@@ -10,3 +10,10 @@ node_modules/
 /.idea/misc.xml
 /.idea/modules.xml
 /.idea/vcs.xml
+/.obs_test_details-*
+/playwright-report
+/local.log
+/log/
+.rcvreport.json
+browserstack.err
+.env

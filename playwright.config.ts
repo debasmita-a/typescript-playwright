@@ -19,8 +19,8 @@ export default defineConfig({
   fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
-  reporter: 'html',
+  workers: process.env.CI ? 1 : 4,
+  reporter: [['html'], ['list'], ['json', {outputFile:'.rcvreport.json'}]],
   use: {
     headless: false,
     trace: 'on-first-retry',
@@ -30,7 +30,10 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     },
-
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    }
   ]
 
 });

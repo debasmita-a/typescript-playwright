@@ -26,7 +26,5 @@ class LoginPage{
         await this.enterPassword(password);
         await this.clickLoginBtn();
     }
-
 }
-
 export default LoginPage;

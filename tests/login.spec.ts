@@ -1,11 +1,8 @@
-import {test, expect, Browser, Page, BrowserContext} from '@playwright/test';
 import {Env} from '../src/frameworkConfig/env';
-import LoginPage from '../src/pages/loginPage';
-import AccountPage from '../src/pages/accountPage';
+import { test, expect } from '../src/utils/fixtures'; 
+import {Page} from 'playwright';
 
-test('login test', async ({page})=>{
-    const loginPage: LoginPage = new LoginPage(page);
-    const accountPage: AccountPage = new AccountPage(page);
+test('login test', async ({page, loginPage, accountPage})=>{
     console.log('Launching app at:', Env.BASE_URL);
     await page.goto(Env.BASE_URL);
     await loginPage.doLogin(Env.USER_EMAIL, Env.USER_PASSWORD);

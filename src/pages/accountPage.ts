@@ -8,7 +8,5 @@ class AccountPage{
     public async getAccountPageTitle(){
         return await this.page.title();
     }
-
 }
-
 export default AccountPage;
