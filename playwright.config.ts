@@ -20,9 +20,9 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
   workers: process.env.CI ? 1 : 4,
-  reporter: [['html'], ['list'], ['json', {outputFile:'.rcvreport.json'}]],
+  reporter: [['html'], ['list']],
   use: {
-    headless: true,
+    headless: false,
     trace: 'on-first-retry',
   },
   projects: [

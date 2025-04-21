@@ -2,7 +2,7 @@ import { test as base } from '@playwright/test';
 import AccountPage from '../pages/accountPage';
 import LoginPage from '../pages/loginPage';
 
-interface PageObjects{
+type PageObjects = {
     loginPage : LoginPage,
     accountPage : AccountPage
 }
