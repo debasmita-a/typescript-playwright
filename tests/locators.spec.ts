@@ -19,8 +19,28 @@ test('practice locators', async()=>{
     console.log(headerExist);
     expect(headerExist).toBe(true);
 
-    const continueBtn:Locator = await page.locator('text=Continue');
-    const continueBtnExist:boolean = await header.isEnabled();
-    console.log(continueBtnExist);
-    expect(continueBtnExist).toBe(true);
+    const loginPageLink:Locator = await page.locator('.list-group', {hasText:"Login"})
+    const loginPageLinkExists:boolean = await loginPageLink.isDisabled();
+    console.log(loginPageLinkExists);
+    expect(loginPageLinkExists).toBe(false);
+
+    const personalDetailsHeader: Locator = await page.locator('legend', {hasText:"Your Personal Details"});
+    console.log(await personalDetailsHeader.textContent());
+   // expect(personalDetailsHeader)
+
+   const emailText:Locator = page.getByPlaceholder('E-Mail');
+   await emailText.fill("lenner_123@gmail.com");
+   expect(await emailText.isEnabled()).toBe(true);
+
+
+   const radioBtn:Locator = await page.getByRole('radio', {name:'Yes'});
+   console.log(await radioBtn.getAttribute("value"));
+   expect(await radioBtn.isChecked()).toBe(false);
+
+   const checkBox:Locator = await page.getByRole('checkbox');
+   await checkBox.click();
+
+   const continueBtn:Locator = await page.getByRole('button', {name: 'Continue'});
+   await continueBtn.click();
+   await page.waitForTimeout(3000);
 });

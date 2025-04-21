@@ -1,4 +1,5 @@
 import { Page, Locator } from '@playwright/test';
+import AccountPage from './accountPage';
 
 class LoginPage{
       
@@ -25,6 +26,7 @@ class LoginPage{
         await this.enterEmail(email);
         await this.enterPassword(password);
         await this.clickLoginBtn();
+        return new AccountPage(this.page);
     }
 }
 export default LoginPage;
