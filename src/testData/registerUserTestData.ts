@@ -4,6 +4,5 @@ export interface RegisterUserDetails{
     email:string;
     telephone:string;
     password:string;
-    newsletter:boolean;
-    privacyPolicy:boolean;
+    newsletter:boolean
 }
