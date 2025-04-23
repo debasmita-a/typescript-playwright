@@ -14,7 +14,6 @@ class RegisterUserPage{
     private telephone_text:Locator = this.page.locator('#input-telephone');
     private password_text:Locator = this.page.locator('#input-password');
     private confirmPassword_text:Locator = this.page.locator('#input-confirm');
-    private newsletter_radioBtn:Locator = this.page.locator('`.radio-inline input[value="${radiovalue}"]`');
     private privacyPolicy_checkBox:Locator = this.page.locator('.agree + input[type= "checkbox"]');
     private continue_Btn:Locator = this.page.getByRole('button', {name:'Continue'});
 
@@ -42,9 +41,10 @@ class RegisterUserPage{
         await this.confirmPassword_text.fill(password);
     }
 
-    private async selectNewsletterOption(radioVal:boolean){
-        if(radioVal){
-            await this.newsletter_radioBtn.check();
+    private async selectNewsletterOption(radioVal:string){
+        let newsletter_radio:Locator = await this.page.locator(`.radio-inline input[value="${radioVal}"]`);      
+        if(radioVal == "1"){
+            await newsletter_radio.check();
         }      
     }
 

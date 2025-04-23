@@ -3,10 +3,18 @@ import { getRandomUserData } from '../src/testData/getRandomUserData';
 import { RegisterUserDetails } from '../src/testData/registerUserTestData';
 import { expect, test } from '../src/utils/fixtures';
 
-test('Register user successfully', async({page, accountPage, registerPage })=>{
+test.beforeEach('navigate to registration page', async({page})=>{
+  await page.goto(Env.BASE_URL+'/register');
+});
+
+test('Register user successfully test 1', async({page, registerPage })=>{
     const registerUserData: RegisterUserDetails = getRandomUserData();
-      await page.goto(Env.BASE_URL+'/register');
       await registerPage.doRegistration(registerUserData); 
-      await page.waitForTimeout(10000);  
-      expect(page.waitForURL('https://naveenautomationlabs.com/opencart/index.php?route=account/success'));
-})
+      expect(await page.waitForURL('https://naveenautomationlabs.com/opencart/index.php?route=account/success'));
+});
+
+test('Register user successfully test 2', async({page, registerPage })=>{
+  const registerUserData: RegisterUserDetails = getRandomUserData();
+    await registerPage.doRegistration(registerUserData); 
+    expect(await page.waitForURL('https://naveenautomationlabs.com/opencart/index.php?route=account/success'));
+});

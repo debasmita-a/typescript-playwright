@@ -8,6 +8,7 @@ export function getRandomUserData():RegisterUserDetails {
         email:faker.internet.email(),
         telephone:faker.phone.number(),
         password:faker.internet.password(),
-        newsletter:faker.datatype.boolean()
+        newsletter:faker.number.int({min:0, max:1}).toString()
     }
+
 }
