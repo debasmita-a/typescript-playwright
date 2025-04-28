@@ -3,7 +3,7 @@ import { test, expect } from '../src/utils/fixtures';
 import productData from '../testdata/productTestData.json';
 
 test('Search products', async({page, loginPage, accountPage, searchResultPage})=>{
-    await page.goto(Env.BASE_URL);
+    await page.goto(Env.BASE_URL+'/login');
     accountPage = await loginPage.doLogin(Env.USER_EMAIL, Env.USER_PASSWORD);
     searchResultPage = await accountPage.doSearch("MacBook");
     await searchResultPage.clickProductResult("MacBook");
@@ -12,7 +12,7 @@ test('Search products', async({page, loginPage, accountPage, searchResultPage})=
 })
 
 test('Search products with testdata', async({page, loginPage, accountPage, searchResultPage})=>{
-    await page.goto(Env.BASE_URL);
+    await page.goto(Env.BASE_URL+'/login');
     accountPage = await loginPage.doLogin(Env.USER_EMAIL, Env.USER_PASSWORD);
     for(const product of productData){
         searchResultPage = await accountPage.doSearch(product.productname);
