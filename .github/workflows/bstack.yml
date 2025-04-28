@@ -32,7 +32,7 @@ jobs:
       env: 
         BROWSERSTACK_USERNAME: ${{secrets.BROWSERSTACK_USERNAME}}
         BROWSERSTACK_ACCESS_KEY: ${{secrets.BROWSERSTACK_ACCESS_KEY}}  
-      run: npm run bstack:test
+      run: npm run bstack
       continue-on-error: true
 
     - uses: actions/upload-artifact@v4
