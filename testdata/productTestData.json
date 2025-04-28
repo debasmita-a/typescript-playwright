@@ -1,0 +1,19 @@
+[
+    {
+        "productname" : "Samsung Galaxy Tab 10.1",
+        "productPriceText" : "$241.99",
+        "productImageCount" : 7
+    },
+    
+    {
+        "productname" : "MacBook",
+        "productPriceText" : "$602.00",
+        "productImageCount" : 5
+    },
+
+    {
+        "productname" : "MacBook Pro",
+        "productPriceText" : "$2,000.00",
+        "productImageCount" : 4
+    }
+]
